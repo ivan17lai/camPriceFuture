@@ -66,18 +66,17 @@ plot_series(
     ma_window=MA_WINDOW
 )
 
-# ===== 圖二：只顯示 Z6 Gen1/2/3 =====
-df_z6 = df[(df["camera_model"] == "Z6") & (df["generation"].isin([1, 2, 3]))].copy()
+# ===== 圖二：只顯示 Z50 / FC / Z6 / Z7 / Z8 =====
+df_selected = df[df["camera_model"].isin(["Z50", "ZFC", "Z9", "Z8"])].copy()
 plot_series(
-    title=f"圖二：Z6 Gen1 / Gen2 / Gen3 價格 MA{MA_WINDOW}",
-    df_sub=df_z6,
+    title=f"圖二：Z50 / FC / Z6 / Z7 / Z8 價格 MA{MA_WINDOW}",
+    df_sub=df_selected,
     ma_window=MA_WINDOW
 )
-
-# ===== 圖三：只顯示 Z7 Gen1/2 =====
-df_z7 = df[((df["camera_model"] == "Z7") & (df["generation"].isin([1, 2]))) | ((df["camera_model"] == "Z9") & (df["generation"].isin([1])))].copy()
+# ===== 圖三：只顯示 Z61 / Z62 / Z63 =====
+df_selected = df[df["camera_model"].isin(["Z6"])].copy()
 plot_series(
-    title=f"圖三：Z7 Gen1 / Gen2 及 Z9 Gen1 價格 MA{MA_WINDOW}",
-    df_sub=df_z7,
+    title=f"圖三：Z61 / Z62 / Z63 價格 MA{MA_WINDOW}",
+    df_sub=df_selected,
     ma_window=MA_WINDOW
 )
