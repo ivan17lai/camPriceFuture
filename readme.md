@@ -170,7 +170,9 @@ Validation MAE ≈ 4,756 TWD (last 6 months)
 
 ## 原始程式碼說明
 
-### 資料及準備
+```
+pip install -r requirements.txt
+```
 
 1. 執行`get_price_from_DCView.py` 於**DCView**中取得Nikon標籤頁面中1~3000頁的貨物資訊。每頁20項，共60000筆，並存入`dcview_nikon.csv`
 
@@ -178,6 +180,9 @@ Validation MAE ≈ 4,756 TWD (last 6 months)
 
 3. 執行`data_Outlier.py` 用於移除離群值，同時移除DSLR機型(僅用於本次最小實驗)
 
+4. 執行`predict_global.py` 進行全域模型訓練，整合多個市場定位相近之機型，並搭配時間序列切分驗證方式，生成價格預測結果
+
+5. 執行`plot_2025_actual_vs_pred.py` 視覺化比較 2025 年以後之實際價格與模型預測結果，並生成相應之圖表供分析參考
 
 ## License
 This project is licensed under the MIT License.
