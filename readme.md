@@ -178,3 +178,8 @@ Validation MAE ≈ 4,756 TWD (last 6 months)
 
 3. 執行`data_Outlier.py` 用於移除離群值，同時移除DSLR機型(僅用於本次最小實驗)
 
+
+## License
+This project is licensed under the MIT License.
+See the LICENSE file for details.
+
